@@ -2,6 +2,38 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.header-nav a,
+.header-menu {
+    transition: color 0.3s ease;
+}
+
+.header-nav a:hover,
+.header-menu:hover {
+    color: #B0907A;
+}
+
+.hero-button {
+    transition: background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #B0907A;
+    color: #E1D4C9;
+}
+
+.theme-button img {
+    transition: opacity 0.3s ease;
+}
+
+.theme-button img:hover {
+    opacity: 0.6;
+}
+
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
@@ -68,6 +100,12 @@ body {
 .theme-button img {
     width: 24px;
     height: 24px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.theme-button img:hover {
+    background-color: #665F55;
 }
 
 .hero {
@@ -123,6 +161,11 @@ body {
 .hero-button img {
     width: 10px;
     height: 10px;
+}
+
+.hero-button:hover {
+    background-color: #665F55;
+    color: #E1D4C9;
 }
 
 .favorite {
@@ -192,6 +235,15 @@ body {
     color: #403F3D;
     font-size: 24px;
     cursor: pointer;
+    transition: background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.slider-button:hover {
+    background-color: #665F55;
+    border-color: #665F55;
+    color: #E1D4C9;
 }
 
 .slider-controls {
@@ -316,11 +368,26 @@ body {
     border-radius: 100px;
     color: #403F3D;
     text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease,
+        color 0.3s ease;
+    ;
+}
+
+.mobile-button:hover {
+    background-color: #665F55;
+    color: #E1D4C9;
 }
 
 .mobile-button-icon {
     font-size: 24px;
+}
+
+.mobile-button-icon img {
+    transition: filter 0.3s ease;
+}
+
+.mobile-button:hover .mobile-button-icon img {
+    filter: brightness(0) saturate(100%) invert(86%) sepia(11%) saturate(300%) hue-rotate(345deg) brightness(95%) contrast(90%);
 }
 
 .mobile-button small {
@@ -401,7 +468,16 @@ body {
 }
 
 .footer-socials a:hover {
-    background-color: #B0907A;
+    background-color: #E1D4C9;
+}
+
+.footer-socials a:hover img {
+    filter: brightness(0) saturate(100%) invert(39%) sepia(8%) saturate(600%) hue-rotate(355deg) brightness(90%) contrast(90%);
+}
+
+.footer-socials a {
+    transition: background-color 0.3s ease,
+        border-color 0.3s ease;
 }
 
 .footer-socials img {
@@ -783,4 +859,35 @@ a.footer-contact:hover {
         font-size: 14px;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .header-nav a,
+    .header-menu {
+        transition: color 0.3s ease;
+    }
+
+    .header-nav a:hover,
+    .header-menu:hover {
+        color: #B0907A;
+    }
+
+    .hero-button {
+        transition: background-color 0.3s ease,
+            color 0.3s ease;
+    }
+
+    .hero-button:hover {
+        background-color: #B0907A;
+        color: #E1D4C9;
+    }
+
+    .theme-button {
+        transition: background-color 0.3s ease;
+    }
+
+    .theme-button:hover {
+        background-color: #B0907A;
+    }
 }
