@@ -124,3 +124,143 @@ body {
     width: 10px;
     height: 10px;
 }
+
+.favorite {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.favorite h2 {
+    margin: 0 auto 40px;
+    color: #403F3D;
+    font-size: 60px;
+    line-height: 1.05;
+    font-weight: 600;
+}
+
+.favorite h2 span {
+    color: #B09078;
+    font-style: italic;
+}
+
+.favorite-slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.favorite-card {
+    width: 480px;
+    text-align: center;
+}
+
+.favorite-card>img {
+    width: 100%;
+    max-width: 480px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.favorite-info h3 {
+    margin: 0 0 16px;
+    color: #403F3D;
+    font-size: 24px;
+}
+
+.favorite-info p {
+    max-width: 500px;
+    margin: 0 auto 16px;
+    color: #403F3D;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.favorite-info strong {
+    display: block;
+    color: #403F3D;
+    font-size: 24px;
+}
+
+.slider-button {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #403F3D;
+    border-radius: 50%;
+    background: transparent;
+    color: #403F3D;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.slider-control {
+    width: 40px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: #C1B6AD;
+}
+
+.slider-control.active {
+    background-color: #403F3D;
+}
+
+.about {
+    padding: 80px 40px;
+}
+
+.about h2 {
+    margin: 0 0 40px;
+    color: #403F3D;
+    font-size: 60px;
+    line-height: 1.05;
+    font-weight: 500;
+}
+
+.about h2 span {
+    color: #B09078;
+    font-style: italic;
+}
+
+.about-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.about-column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 50%;
+}
+
+.about-column img {
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.about-column:first-child img:first-child {
+    height: 590px;
+}
+
+.about-column:first-child img:last-child {
+    height: 430px;
+}
+
+.about-column:last-child img:first-child {
+    height: 430px;
+}
+
+.about-column:last-child img:last-child {
+    height: 590px;
+}
