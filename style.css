@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background-color: #E1D4C9;
+    color: #403F3D;
+}
+
+.header {
+    padding: 20px 40px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-logo img {
+    width: 100px;
+    display: block;
+}
+
+.header-nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav a,
+.header-menu {
+    color: #403F3D;
+    text-decoration: none;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.header-menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-menu img {
+    width: 60px;
+}
+
+.theme-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #c1b6ad;
+    border-radius: 100px;
+    background: transparent;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.theme-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.hero {
+    min-height: 600px;
+    margin: 0 40px;
+    border-radius: 40px;
+    background-image: url("assets/img-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 530px;
+    margin-left: 100px;
+}
+
+.hero h1 {
+    margin: 0 0 24px;
+    color: #e1d4c9;
+    font-size: 60px;
+    line-height: 1.05;
+    font-weight: 600;
+}
+
+.hero h1 span {
+    color: #b0907a;
+    font-style: italic;
+}
+
+.hero p {
+    margin: 0 0 40px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #E1D4C9;
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    padding: 20px 30px;
+    border-radius: 100px;
+    background-color: #E1D4C9;
+    color: #403F3D;
+    text-decoration: none;
+    font-weight: 600;
+    gap: 10px;
+}
+
+.hero-button img {
+    width: 10px;
+    height: 10px;
+}
