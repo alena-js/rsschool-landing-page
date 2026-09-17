@@ -51,6 +51,14 @@ body {
     justify-content: space-between;
 }
 
+.header-logo .logo-dark {
+    display: none;
+}
+
+.header-logo .logo-light {
+    display: block;
+}
+
 .header-logo img {
     width: 100px;
     display: block;
@@ -890,4 +898,102 @@ a.footer-contact:hover {
     .theme-button:hover {
         background-color: #B0907A;
     }
+}
+
+body.dark-theme {
+    background-color: #292826;
+    color: #E1D4C9;
+}
+
+body.dark-theme .header-logo .logo-light {
+    display: none;
+}
+
+body.dark-theme .header-logo .logo-dark {
+    display: block;
+}
+
+body.dark-theme .header-nav a {
+    color: #e1d4c9;
+}
+
+body.dark-theme .header-menu {
+    color: #E1D4C9;
+}
+
+body.dark-theme .theme-button {
+    border-color: #E1D4C9;
+    color: #E1D4C9;
+}
+
+body.dark-theme .header-menu {
+    color: #E1D4C9;
+}
+
+body.dark-theme .header-menu img {
+    filter: brightness(0) saturate(100%) invert(86%) sepia(11%) saturate(300%) hue-rotate(345deg) brightness(95%) contrast(90%);
+}
+
+body.dark-theme .hero h1 {
+    color: #E1D4C9;
+}
+
+body.dark-theme .hero p {
+    color: #E1D4C9;
+}
+
+body.dark-theme .hero-button {
+    background-color: #403F3D;
+    color: #E1D4C9;
+}
+
+body.dark-theme .favorite h2,
+body.dark-theme .favorite-info h3,
+body.dark-theme .favorite-info p,
+body.dark-theme .favorite-info strong {
+    color: #E1D4C9;
+}
+
+body.dark-theme .slider-button {
+    border-color: #E1D4C9;
+    color: #E1D4C9;
+}
+
+body.dark-theme .slider-button:hover {
+    background-color: #403F3D;
+    border-color: transparent;
+    color: #E1D4C9;
+}
+
+body.dark-theme .slider-control.active {
+    background-color: #E1D4C9;
+}
+
+body.dark-theme .about h2 {
+    color: #E1D4C9;
+}
+
+body.dark-theme .mobile h2,
+body.dark-theme .mobile-content>p {
+    color: #E1D4C9;
+}
+
+body.dark-theme .mobile-button {
+    border-color: #E1D4C9;
+    color: #E1D4C9;
+}
+
+body.dark-theme .mobile-button:hover {
+    background-color: #403F3D;
+    border-color: transparent;
+    color: #E1D4C9;
+}
+
+body.dark-theme .mobile-button-icon img {
+    filter: brightness(0) saturate(100%) invert(86%) sepia(11%) saturate(300%) hue-rotate(345deg) brightness(95%) contrast(90%);
+}
+
+
+body.dark-theme .footer {
+    background-color: #403F3D;
 }
