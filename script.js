@@ -36,3 +36,45 @@ if (mobileMenuButton && mobileMenu) {
         });
     });
 }
+
+const favoriteCards = document.querySelectorAll('.favorite-card');
+const prevButton = document.querySelector('.slider-button-prev');
+const nextButton = document.querySelector('.slider-button-next');
+const sliderControls = document.querySelectorAll('.slider-control');
+
+let currentSlide = 0;
+
+function showSlide(index) {
+    favoriteCards.forEach((card) => {
+        card.style.display = 'none';
+    });
+
+    sliderControls.forEach((control) => {
+        control.classList.remove('active');
+    });
+
+    favoriteCards[index].style.display = 'block';
+    sliderControls[index].classList.add('active');
+
+    currentSlide = index;
+}
+
+nextButton.addEventListener('click', () => {
+    currentSlide++;
+
+    if (currentSlide >= favoriteCards.length) {
+        currentSlide = 0;
+    }
+
+    showSlide(currentSlide);
+});
+
+prevButton.addEventListener('click', () => {
+    currentSlide--;
+
+    if (currentSlide < 0) {
+        currentSlide = favoriteCards.length - 1;
+    }
+
+    showSlide(currentSlide);
+});
