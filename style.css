@@ -1100,7 +1100,7 @@ body.dark-theme .footer {
     padding: 20px;
 }
 
-.menu-card-content h3 {
+.menu-card-content h2 {
     margin: 0 0 12px;
     color: #403F3D;
     font-size: 24px;
@@ -1146,7 +1146,7 @@ body.dark-theme .footer {
         padding: 16px;
     }
 
-    .menu-card-content h3 {
+    .menu-card-content h2 {
         font-size: 20px;
     }
 
