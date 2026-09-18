@@ -6,6 +6,11 @@ html {
     scroll-behavior: smooth;
 }
 
+html,
+body {
+    overflow-x: hidden;
+}
+
 .header-nav a,
 .header-menu {
     transition: color 0.3s ease;
@@ -325,6 +330,11 @@ body {
     display: block;
     border-radius: 20px;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.about-column img:hover {
+    transform: scale(0.9);
 }
 
 .about-column:first-child img:first-child {
@@ -790,11 +800,6 @@ a.footer-contact:hover {
         font-size: 20px;
     }
 
-    .slider-button {
-        display: none;
-    }
-
-
     /* About */
 
     .about {
@@ -1119,10 +1124,6 @@ body.dark-theme .footer {
 }
 
 @media (max-width: 768px) {
-
-    body {
-        overflow-x: hidden;
-    }
 
     .menu-page {
         padding: 40px 20px 0;
