@@ -20,13 +20,13 @@
             <nav class="header-nav">
                 <ul>
                     <li>
-                        <a href="#favorite">Favorite coffee</a>
+                        <a href="index.html#favorite">Favorite coffee</a>
                     </li>
                     <li>
-                        <a href="#about">About</a>
+                        <a href="index.html#about">About</a>
                     </li>
                     <li>
-                        <a href="#mobile">Mobile app</a>
+                        <a href="index.html#mobile">Mobile app</a>
                     </li>
                     <li>
                         <a href="#contacts">Contact us</a>
@@ -38,10 +38,28 @@
                     <img src="assets/Light.svg" alt="светлая тема">
                     <img src="assets/Dark.svg" alt="темная тема">
                 </button>
-                <a class="header-menu" href="menu.html">
-                    <img src="assets/menu-item.svg" alt="Menu">
+                <button class="mobile-menu-button" id="mobile-menu-button" type="button" aria-label="Открыть меню">
+                    <span></span>
+                    <span></span>
+                </button>
+                <a class="header-menu" href="menu.html">Menu
+                    <img src="assets/coffee-cup.svg" alt="Menu">
                 </a>
             </div>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="index.html#favorite">Favorite coffee</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#mobile">Mobile app</a>
+            <a href="#contacts">Contact us</a>
+            <a href="menu.html">Menu
+                <img src="assets/coffee-cup.svg" alt="Menu">
+            </a>
+        </div>
+        <a class="header-menu" href="menu.html">
+            <img src="assets/menu-item.svg" alt="Menu">
+        </a>
+        </div>
         </div>
     </header>
     <main>
@@ -72,7 +90,73 @@
                         <strong>$7.00</strong>
                     </div>
                 </article>
+                <article class="menu-card">
+                    <img src="assets/coffee-2.svg" alt="Kahlua coffee">
+                    <div class="menu-card-content">
+                        <h3>Kahlua coffee</h3>
+                        <p>Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
+                        <strong>$7.00</strong>
+                    </div>
+                </article>
 
+                <article class="menu-card">
+                    <img src="assets/coffee-3.svg" alt="Honey raf">
+                    <div class="menu-card-content">
+                        <h3>Honey raf</h3>
+                        <p>Espresso with frothed milk, cream and aromatic honey</p>
+                        <strong>$5.50</strong>
+                    </div>
+                </article>
+
+                <article class="menu-card">
+                    <img src="assets/coffee-4.svg" alt="Ice cappuccino">
+                    <div class="menu-card-content">
+                        <h3>Ice cappuccino</h3>
+                        <p>Cappuccino with soft thick foam in summer version with ice</p>
+                        <strong>$5.00</strong>
+                    </div>
+                </article>
+
+                <article class="menu-card">
+                    <img src="assets/coffee-5.svg" alt="Espresso">
+                    <div class="menu-card-content">
+                        <h3>Espresso</h3>
+                        <p>Classic black coffee</p>
+                        <strong>$4.50</strong>
+                    </div>
+                </article>
+
+                <article class="menu-card">
+                    <img src="assets/coffee-6.svg" alt="Cappuccino">
+                    <div class="menu-card-content">
+                        <h3>Latte</h3>
+                        <p>Espresso coffee with the addition of steamed milk and dense milk foam</p>
+                        <strong>$5.50</strong>
+                    </div>
+                </article>
+
+                <article class="menu-card">
+                    <img src="assets/coffee-7.svg" alt="Latte">
+                    <div class="menu-card-content">
+                        <h3>Latte macchiato</h3>
+                        <p>Espresso with frothed milk and chocolate</p>
+                        <strong>$5.50</strong>
+                    </div>
+                </article>
+
+                <article class="menu-card">
+                    <img src="assets/coffee-8.svg" alt="Mocha">
+                    <div class="menu-card-content">
+                        <h3>Coffee with cognac</h3>
+                        <p>Fragrant black coffee with cognac and whipped cream</p>
+                        <strong>$6.50</strong>
+                    </div>
+                </article>
+            </div>
+            <div class="load-more-wrapper">
+                <button class="load-more" type="button" aria-label="Load more">
+                    <span>↓</span>
+                </button>
             </div>
         </section>
     </main>
