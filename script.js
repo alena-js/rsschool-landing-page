@@ -89,32 +89,143 @@ fetch('products.json')
         const menuGrid = document.querySelector('.menu-grid');
         const categoryButtons = document.querySelectorAll('.menu-category');
         const loadMoreButton = document.querySelector('.load-more');
+        const modal = document.querySelector('#modal');
+        const modalImage = document.querySelector('#modal-image');
+        const modalTitle = document.querySelector('#modal-title');
+        const modalDescription = document.querySelector('#modal-description');
+        const modalPrice = document.querySelector('#modal-price');
+        const modalSizes = document.querySelector('#modal-sizes');
+        const modalAdditives = document.querySelector('#modal-additives');
+        const modalClose = document.querySelector('.modal-close');
+        const modalOverlay = document.querySelector('.modal-overlay');
 
         let currentCategory = 'coffee';
-        let showAllCards = false;
+        let showAllCards = window.innerWidth > 768;
 
         function createCard(product) {
-            const card = document.createElement('article');
+    const card = document.createElement('article');
 
-            card.classList.add('menu-card');
+    card.classList.add('menu-card');
 
-            const categoryProducts = products.filter(
-                (item) => item.category === product.category
-            );
+    const categoryProducts = products.filter(
+        (item) => item.category === product.category
+    );
 
-            const imageNumber = categoryProducts.indexOf(product) + 1;
+    const imageNumber = categoryProducts.indexOf(product) + 1;
 
-            card.innerHTML = `
-                <img src="assets/${product.category}-${imageNumber}.svg" alt="${product.name}">
-                <div class="menu-card-content">
-                    <h2>${product.name}</h2>
-                    <p>${product.description}</p>
-                    <strong>$${product.price}</strong>
-                </div>
-            `;
+    card.innerHTML = `
+        <img src="assets/${product.category}-${imageNumber}.svg" alt="${product.name}">
+        <div class="menu-card-content">
+            <h2>${product.name}</h2>
+            <p>${product.description}</p>
+            <strong>$${product.price}</strong>
+        </div>
+    `;
 
-            return card;
+    card.addEventListener('click', () => {
+        modalImage.src = `assets/${product.category}-${imageNumber}.svg`;
+        modalImage.alt = product.name;
+        modalTitle.textContent = product.name;
+        modalDescription.textContent = product.description;
+
+        modalSizes.innerHTML = '';
+        modalAdditives.innerHTML = '';
+
+        function updateModalPrice() {
+            let totalPrice = Number(product.price);
+
+            const activeSize = modalSizes.querySelector('.modal-option.active');
+
+            if (activeSize) {
+                const sizeKey = activeSize.dataset.size;
+
+                totalPrice += Number(product.sizes[sizeKey]['add-price']);
+            }
+
+            modalAdditives
+                .querySelectorAll('.modal-option.active')
+                .forEach((button) => {
+                    const additiveKey = button.dataset.additive;
+
+                    totalPrice += Number(
+                        product.additives[additiveKey]['add-price']
+                    );
+                });
+
+            modalPrice.textContent = `$${totalPrice.toFixed(2)}`;
         }
+
+        Object.entries(product.sizes).forEach(
+            ([sizeKey, sizeData], index) => {
+                const sizeButton = document.createElement('button');
+
+                sizeButton.type = 'button';
+                sizeButton.classList.add('modal-option');
+                sizeButton.dataset.size = sizeKey;
+
+                sizeButton.innerHTML = `
+                    <span class="modal-option-circle">
+                        ${sizeKey.toUpperCase()}
+                    </span>
+                    <span>${sizeData.size}</span>
+                `;
+
+                if (index === 0) {
+                    sizeButton.classList.add('active');
+                }
+
+                sizeButton.addEventListener('click', (event) => {
+                    event.stopPropagation();
+
+                    modalSizes
+                        .querySelectorAll('.modal-option')
+                        .forEach((button) => {
+                            button.classList.remove('active');
+                        });
+
+                    sizeButton.classList.add('active');
+
+                    updateModalPrice();
+                });
+
+                modalSizes.append(sizeButton);
+            }
+        );
+        Object.entries(product.additives).forEach(
+    ([additiveKey, additiveData], index) => {
+        const additiveButton = document.createElement('button');
+
+        additiveButton.type = 'button';
+        additiveButton.classList.add('modal-option');
+        additiveButton.dataset.additive = additiveKey;
+
+        additiveButton.innerHTML = `
+            <span class="modal-option-circle">
+                ${index + 1}
+            </span>
+            <span>${additiveData.name}</span>
+        `;
+
+        additiveButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+
+            additiveButton.classList.toggle('active');
+
+            updateModalPrice();
+        });
+
+        modalAdditives.append(additiveButton);
+    }
+);
+
+        updateModalPrice();
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    return card;
+}
 
         function renderCategory(category) {
             menuGrid.innerHTML = '';
@@ -123,9 +234,10 @@ fetch('products.json')
                 (product) => product.category === category
             );
 
-            const productsToShow = showAllCards
-                ? categoryProducts
-                : categoryProducts.slice(0, 4);
+            const isMobile = window.innerWidth <= 768;
+            const productsToShow = isMobile && !showAllCards
+            ? categoryProducts.slice(0, 4)
+            : categoryProducts;
 
             productsToShow.forEach((product) => {
                 menuGrid.append(createCard(product));
@@ -164,4 +276,27 @@ fetch('products.json')
                 renderCategory(currentCategory);
             });
         }
-    });
+        window.addEventListener('resize', () => {
+
+    if (window.innerWidth > 768) {
+        showAllCards = true;
+    } else {
+        showAllCards = false;
+    }
+
+    renderCategory(currentCategory);
+});
+
+function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+modalClose.addEventListener('click', closeModal);
+modalOverlay.addEventListener('click', closeModal);
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        closeModal();
+    }
+});
+
+});
