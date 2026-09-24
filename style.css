@@ -1157,10 +1157,6 @@ body.dark-theme .footer {
         font-size: 20px;
     }
 
-    .menu-card:nth-child(n + 5) {
-        display: none;
-    }
-
     .load-more-wrapper {
         width: 100%;
         display: flex;
