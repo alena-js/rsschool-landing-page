@@ -1223,7 +1223,7 @@ body.dark-theme .footer {
 }
 
 body.dark-theme .menu-page h1,
-body.dark-theme .menu-card-content h3,
+body.dark-theme .menu-card-content h2,
 body.dark-theme .menu-card-content p,
 body.dark-theme .menu-card-content strong {
     color: #E1D4C9;
@@ -1573,4 +1573,9 @@ body.dark-theme .mobile-menu a {
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
+}
+
+html.modal-open,
+body.modal-open {
+    overflow: hidden;
 }

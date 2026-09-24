@@ -219,9 +219,9 @@ fetch('products.json')
 );
 
         updateModalPrice();
-
         modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        document.documentElement.classList.add('modal-open');
+        document.body.classList.add('modal-open');
     });
 
     return card;
@@ -289,7 +289,8 @@ fetch('products.json')
 
 function closeModal() {
     modal.classList.remove('active');
-    document.body.style.overflow = '';
+    document.documentElement.classList.remove('modal-open');
+    document.body.classList.remove('modal-open');
 }
 modalClose.addEventListener('click', closeModal);
 modalOverlay.addEventListener('click', closeModal);
