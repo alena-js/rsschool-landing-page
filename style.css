@@ -117,7 +117,11 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.theme-button img:hover {
+body:not(.dark-theme) .theme-button img:first-child {
+    background-color: #665F55;
+}
+
+body.dark-theme .theme-button img:last-child {
     background-color: #665F55;
 }
 
@@ -1083,8 +1087,16 @@ body.dark-theme .footer {
     height: 36px;
     border-radius: 50%;
     background-color: #C1B6AD;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
+}
+
+.menu-category-dot img {
+    width: 20px;
+    height: 20px;
+    display: block;
 }
 
 .menu-grid {
@@ -1693,4 +1705,12 @@ body.dark-theme .modal-total {
 body.dark-theme .modal-close {
     border-color: #E1D4C9;
     color: #E1D4C9;
+}
+
+html {
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
 }
