@@ -25,6 +25,14 @@ if (mobileMenuButton && mobileMenu) {
     mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('active');
         mobileMenuButton.classList.toggle('active');
+
+        if (mobileMenu.classList.contains('active')) {
+            document.documentElement.classList.add('menu-open');
+            document.body.classList.add('menu-open');
+        } else {
+            document.documentElement.classList.remove('menu-open');
+            document.body.classList.remove('menu-open');
+        }
     });
 
     const mobileMenuLinks = mobileMenu.querySelectorAll('a');
@@ -33,7 +41,18 @@ if (mobileMenuButton && mobileMenu) {
         link.addEventListener('click', () => {
             mobileMenu.classList.remove('active');
             mobileMenuButton.classList.remove('active');
+            document.documentElement.classList.remove('menu-open');
+            document.body.classList.remove('menu-open');
         });
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            mobileMenu.classList.remove('active');
+            mobileMenuButton.classList.remove('active');
+            document.documentElement.classList.remove('menu-open');
+            document.body.classList.remove('menu-open');
+        }
     });
 }
 

@@ -200,16 +200,18 @@ body {
 }
 
 .favorite-slider {
-    display: flex;
+    display: grid;
+    grid-template-columns: 60px minmax(480px, 480px) 60px;
     align-items: center;
     justify-content: space-between;
+    gap: 40px;
     width: 100%;
     margin: 0 auto;
 }
 
 .favorite-card {
     display: none;
-    width: 480px;
+    width: 100%;
     text-align: center;
     animation: favorite-fade 0.4s ease;
 }
@@ -221,12 +223,12 @@ body {
 @keyframes favorite-fade {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateX(20px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }
 
@@ -609,11 +611,12 @@ a.footer-contact:hover {
     }
 
     .favorite-slider {
+        grid-template-columns: 50px minmax(0, 1fr) 50px;
         gap: 20px;
     }
 
     .favorite-card {
-        width: min(480px, calc(100% - 120px));
+        width: 100%;
     }
 
     .favorite-card>img {
@@ -773,15 +776,15 @@ a.footer-contact:hover {
         font-size: 40px;
         white-space: normal;
     }
-
     .favorite-slider {
-        justify-content: center;
-    }
+        grid-template-columns: 44px minmax(0, 1fr) 44px;
+        gap: 8px;
+}
 
     .favorite-card {
-        width: calc(100% - 80px);
-        margin: 0 auto;
-    }
+        width: 100%;
+        margin: 0;
+}
 
     .favorite-card>img {
         width: 100%;
@@ -799,6 +802,12 @@ a.footer-contact:hover {
     .favorite-info strong {
         font-size: 20px;
     }
+
+    .slider-button {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+}
 
     /* About */
 
@@ -1577,5 +1586,10 @@ body.dark-theme .mobile-menu a {
 
 html.modal-open,
 body.modal-open {
+    overflow: hidden;
+}
+
+html.menu-open,
+body.menu-open {
     overflow: hidden;
 }
